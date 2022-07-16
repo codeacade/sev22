@@ -1,5 +1,10 @@
 const express = require('express');
+const path = require("path");
+const publicPath = path.join(__dirname + '/public');
 const app = express();
-app.get('/', (req,res) => {res.send('<h2>** Home **</h2><a href="/info">see page info</a>')});
-app.get('/info', (req,res) => {res.send('<h2>** Page Info **</h2><a href="/">back home</a>')});
+
+app.use(express.static(publicPath));
+//app.get("/", (req, res) => res.sendFile(publicPath + "/index.html"));
+//app.get("/battle", (req, res) => res.sendFile(publicPath + "/battle.html"));
+app.get('/', (req,res) => {res.send('<h2>* Home *</h2><a href="/info">see page info</a>' + __dirname)});
 app.listen(process.env.PORT || 3000);
