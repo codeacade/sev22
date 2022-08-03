@@ -1,10 +1,4 @@
-const express = require('express');
-const app = express();
-const path = __dirname + '/www';
+const http = require('http');
+const server = http.createServer((req,res) => res.end("<p>Pure HTML</p>"));
 
-app.get('', (req,res) => res.send('<a href="./battle">BATTLE</a>'));
-app.get('/battle', (req,res) => res.send('<a href="./">HOME</a>'));
-
-app.get('/index', (req,res) => res.sendFile(path + '/index.html'));
-
-app.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3000);
