@@ -7,4 +7,4 @@ app.get('/battle', (req,res) => res.send('<a href="./">HOME</a>'));
 
 app.get('/index', (req,res) => res.sendFile(path + '/index.html'));
 
-app.listen(process.env.PORt || 3000);
+app.listen(process.env.PORT || 3000);
