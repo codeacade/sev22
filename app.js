@@ -27,4 +27,4 @@ const server = http.createServer((req, res) => {
 </html>`);
 	
 });
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
